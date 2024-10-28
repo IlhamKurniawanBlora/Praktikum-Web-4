@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Left Panel for Input -->
+        <div class="left-panel">
+            <h2>Data Input</h2>
+            <div class="form-group">
+                <label for="nama">Nama</label>
+                <input type="text" id="nama" name="nama" placeholder="Masukkan nama Anda" required>
+                <div class="error-message" id="namaError"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="umur">Umur</label>
+                <input type="text" id="umur" name="umur" placeholder="Masukkan umur Anda" required>
+                <div class="error-message" id="umurError"></div>
+            </div>
+
+            <button onclick="submitData()">Submit Data</button>
+            
+            <div class="form-group" style="margin-top: 30px;">
+                <label for="lebar">Lebar (px)</label>
+                <input type="number" id="lebar" name="lebar" placeholder="Masukkan lebar" oninput="updateRectangle()" required>
+            </div>
+
+            <div class="form-group">
+                <label for="tinggi">Tinggi (px)</label>
+                <input type="number" id="tinggi" name="tinggi" placeholder="Masukkan tinggi" oninput="updateRectangle()" required>
+            </div>
+        </div>
+
+        <!-- Right Panel for Displaying Results -->
+        <div class="right-panel">
+            <h3>Hasil Data</h3>
+            <div id="result" class="result"></div>
+            <p class="text">
+                Tinggi : <span id="tinggiHasil">100 px</span>
+                Lebar : <span id="lebarHasil">100 px</span>
+            </p>
+            <div id="rectangle" class="rectangle" style="width: 100px; height: 100px;">
+               
+                10000 px²
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
